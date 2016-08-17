@@ -17,7 +17,7 @@ if (system.args.length !== 4) {
   phantom.exit(1);
 }
 
-console.log("%j", system.args);
+console.log("Script initialized with: %j", system.args);
 
 var basePath = system.args[1];
 
@@ -63,8 +63,6 @@ var server = require('webserver').create();
  */
 
 
-
-
 var page = new WebPage();
 
 page.onResourceError = function(resourceError) {
@@ -73,7 +71,7 @@ page.onResourceError = function(resourceError) {
 
 var service = server.listen(port, function(request, response) {
   
-  if (request.url == '/healthCheck') {
+  if (request.url === '/healthCheck') {
 
     console.log('healthCheck');
 
@@ -91,37 +89,37 @@ var service = server.listen(port, function(request, response) {
     return;
   }
 
-  var body = '<html><head><link rel="stylesheet" type="text/css" href="//s3-sa-east-1.amazonaws.com/mobiliza-prod-static/clients-nocache/01bd766/mobiliza/padraoClean/./css/geral.css">'
-      + '</head>'
-      + '<body>'
-      + '<div class="wrapper">'
-      + '<div id="slider" class="middle" style="width: 980px; height: 540px;">'
-      + '<div class="swipe-wrap" style="width: 980px;"><div style="width: 980px; height: 540px; left: 0px; ">'
-      + '<div class="resource"><div class="imagem" id="57a33d648151e9ce08206e79" style="position: absolute; top: 237px; left: 194px; height: 212px; width: 283px; z-index: 3; opacity: 1;">'
-      + '<div class="trow">'
-      + '<div class="tcell">'
-      + '<div id="imageWrapper" class="">'
-      + '<img src=" http://s3-sa-east-1.amazonaws.com/mobiliza-apl/clients/mobiliza/courses/57a21ee48151e9ce08206814/snp/57a21ef18151e9ce08206817/57a21f018151e9ce08206818/r57a33d648151e9ce08206e79/57a33d648151e9ce08206e79_src.jpg?update=1470315903648  ">'
-      + '<span class="glyphicon glyphicon-picture"></span>'
-      + '</div>'
-      + '</div>''
-      + '</div>'
-      + '</div></div><div class="resource"><div class="imagem" id="57a21f038151e9ce0820681a" style="position: absolute; top: 219px; left: 565px; height: 212px; width: 283.043px; z-index: 2; opacity: 1;">'
-      + '<div class="trow">'
-      + '<div class="tcell">'
-      + '<div id="imageWrapper" class="">'
-      + '<img src=" http://s3-sa-east-1.amazonaws.com/mobiliza-apl/clients/mobiliza/courses/57a21ee48151e9ce08206814/snp/57a21ef18151e9ce08206817/57a21f018151e9ce08206818/r57a21f038151e9ce0820681a/57a21f038151e9ce0820681a_src.jpg?update=1470250544175  ">'
-      + '<span class="glyphicon glyphicon-picture"></span>'
-      + '</div>'
-      + '</div>'
-      + '</div>'
-      + '</div></div><div class="resource"><div id="57a21f028151e9ce08206819" class="texto normal semFundo" style="position: absolute; width: 284px; top: 103px; left: 75px; z-index: 1; opacity: 1;">'
-      + '<div class="pontaBalao"></div>'
-      + '<div class="tagP" style="">'
-      + 'Lorem ipsum Aliqua nostrud occaecat anim elit culpa ut magna velit esse deserunt.'
-      + '</div>'
-      + '</div></div></div></div>'
-      + '</div></div></body></html>';
+  var body = '<html><head><link rel="stylesheet" type="text/css" href="//s3-sa-east-1.amazonaws.com/mobiliza-prod-static/clients-nocache/01bd766/mobiliza/padraoClean/./css/geral.css"> \
+      </head> \
+      <body> \
+      <div class="wrapper"> \
+      <div id="slider" class="middle" style="width: 980px; height: 540px;"> \
+      <div class="swipe-wrap" style="width: 980px;"><div style="width: 980px; height: 540px; left: 0px; "> \
+      <div class="resource"><div class="imagem" id="57a33d648151e9ce08206e79" style="position: absolute; top: 237px; left: 194px; height: 212px; width: 283px; z-index: 3; opacity: 1;"> \
+      <div class="trow"> \
+      <div class="tcell"> \
+      <div id="imageWrapper" class=""> \
+      <img src=" http://s3-sa-east-1.amazonaws.com/mobiliza-apl/clients/mobiliza/courses/57a21ee48151e9ce08206814/snp/57a21ef18151e9ce08206817/57a21f018151e9ce08206818/r57a33d648151e9ce08206e79/57a33d648151e9ce08206e79_src.jpg?update=1470315903648  "> \
+      <span class="glyphicon glyphicon-picture"></span> \
+      </div> \
+      </div> \
+      </div> \
+      </div></div><div class="resource"><div class="imagem" id="57a21f038151e9ce0820681a" style="position: absolute; top: 219px; left: 565px; height: 212px; width: 283.043px; z-index: 2; opacity: 1;"> \
+      <div class="trow"> \
+      <div class="tcell"> \
+      <div id="imageWrapper" class=""> \
+      <img src=" http://s3-sa-east-1.amazonaws.com/mobiliza-apl/clients/mobiliza/courses/57a21ee48151e9ce08206814/snp/57a21ef18151e9ce08206817/57a21f018151e9ce08206818/r57a21f038151e9ce0820681a/57a21f038151e9ce0820681a_src.jpg?update=1470250544175  "> \
+      <span class="glyphicon glyphicon-picture"></span> \
+      </div> \
+      </div> \
+      </div> \
+      </div></div><div class="resource"><div id="57a21f028151e9ce08206819" class="texto normal semFundo" style="position: absolute; width: 284px; top: 103px; left: 75px; z-index: 1; opacity: 1;"> \
+      <div class="pontaBalao"></div> \
+      <div class="tagP" style=""> \
+      Lorem ipsum Aliqua nostrud occaecat anim elit culpa ut magna velit esse deserunt. \
+      </div> \
+      </div></div></div></div> \
+      </div></div></body></html>';
 
   var url = request.headers.url;
   var path = basePath + (request.headers.filename || (url.replace(new RegExp('https?://'), '').replace(/\//g, '.') + '.png'));
